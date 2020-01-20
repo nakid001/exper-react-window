@@ -3,23 +3,37 @@ import './App.css';
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
-import Dropdownwindows from './components/DropdownReact'
-const options = [
-  'one', 'two', 'three','asd', 'gg', 'hh','zxc', 'vv', 'qwe',
+import NormalList from './components/NormalList'
+import ReactWindowList from './components/ReactWindowList'
 
+const options = [
+  'one', 'two', 'three', 'asd', 'gg', 'hh', 'zxc', 'vv', 'qwe',
 ]
-const defaultOption = options[0]
+
+
+function generateOption():any  {
+  let options = []
+  for (let i =0;i<1000;i++) {
+    options.push('Options ', i+1)
+  }
+  return options
+}
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <div id="simple-dd">
-        <Dropdown options={options} value={defaultOption} placeholder="Select an option" />
+      <div id="simple-dd" >
+        {/* <NormalList options={generateOption()} /> */}
       </div>
+      <br/>
+      <br/>
+      <br/>
       <div>dodo</div>
+      <br/>
+      <br/>
+      <br/>
       <div id="react-dd">
-        <Dropdownwindows
-          options={options} />
+        <ReactWindowList options={generateOption()} />
       </div>
     </div>
   );
