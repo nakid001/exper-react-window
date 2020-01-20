@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
-import { FixedSizeList } from "react-window";
+import React, { FC } from "react";
+import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import AutoSizer from "react-virtualized-auto-sizer";
+
 
 interface DropdownReactProps {
   options: string[]
@@ -9,28 +10,32 @@ interface DropdownReactProps {
 const ReactWindowList: FC<DropdownReactProps> = (props: any) => {
   const { options } = props
 
-  const Row = (index: any, style: any): JSX.Element => {
-    console.log(index.index)
+
+  const Row = ({ index, style }: ListChildComponentProps): JSX.Element => {
     return (
-      <div key={index.index} style={style}>
-        {options[index.index]}
+      <div key={index} style={style}>
+        {options[index]}
       </div>
     );
   };
 
 
-  return (
 
-    <FixedSizeList
-      className="List"
-      height={500}
-      itemCount={options.length}
-      itemSize={35}
-      width={500}
-    >
-      {Row}
-    </FixedSizeList>
-  )
+  return (
+    <AutoSizer >
+      {({ height, width }) => (
+        <FixedSizeList
+          className="List"
+          height={height}
+          itemCount={options.length}
+          itemSize={35}
+          width={width}
+        >
+          {Row}
+        </FixedSizeList>
+      )}
+    </AutoSizer>
+  );
 }
 
-export default ReactWindowList;
+export default ReactWindowList

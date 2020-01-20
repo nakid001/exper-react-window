@@ -6,15 +6,11 @@ import 'react-dropdown/style.css'
 import NormalList from './components/NormalList'
 import ReactWindowList from './components/ReactWindowList'
 
-const options = [
-  'one', 'two', 'three', 'asd', 'gg', 'hh', 'zxc', 'vv', 'qwe',
-]
 
-
-function generateOption():any  {
+function generateOption(): any {
   let options = []
-  for (let i =0;i<1000;i++) {
-    options.push('Options ', i+1)
+  for (let i = 0; i < 100000; i++) {
+    options.push('Options ', i + 1)
   }
   return options
 }
@@ -22,18 +18,18 @@ function generateOption():any  {
 const App: React.FC = () => {
   return (
     <div className="App">
-      <div id="simple-dd" >
+      <div id="simple-dd" style={{ height: "200px", width: "100%", overflow: "scroll" }}>
         {/* <NormalList options={generateOption()} /> */}
       </div>
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
       <div>dodo</div>
-      <br/>
-      <br/>
-      <br/>
-      <div id="react-dd">
-        <ReactWindowList options={generateOption()} />
+      <br />
+      <br />
+      <br />
+      <div id="react-dd" style={{ height: 1000, width: "100%" }}>
+        <ReactWindowList  options={generateOption()} />
       </div>
     </div>
   );
