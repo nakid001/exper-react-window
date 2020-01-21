@@ -1,16 +1,20 @@
 import React, { FC } from 'react';
-import { FixedSizeList } from "react-window";
-import AutoSizer from "react-virtualized-auto-sizer";
 
-interface DropdownReactProps {
+interface LargeDataProps {
   options: string[]
 }
+function generateOption(): any {
+  let options = []
+  for (let i = 0; i < 100000; i++) {
+    options.push('Options ' +  (i + 1))
+  }
+  return options
+}
 
-const NormalList: FC<DropdownReactProps> = (props: any) => {
-  const { options } = props
+
+const NormalList: FC<LargeDataProps> = (props: any) => {
   let normalOutputList:any = []
-  console.log(options)
-  options.forEach((option:any, index:number) => {
+  generateOption().forEach((option:any, index:number) => {
     normalOutputList.push(
       <div key={index}>
         {option}
