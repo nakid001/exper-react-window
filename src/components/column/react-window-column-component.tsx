@@ -2,8 +2,6 @@ import React from 'react'
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import AutoSizer from "react-virtualized-auto-sizer";
 
-
-
 interface ReactWindowColumnProps {
   options: string[]
 }

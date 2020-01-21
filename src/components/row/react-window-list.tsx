@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import ReactWindowComponent from './ReactWindowComponent'
+import ReactWindowComponent from './react-window-list-component'
 interface LargeDataProps {
   options: string[]
 }

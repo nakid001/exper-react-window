@@ -4,8 +4,8 @@ import 'react-dropdown/style.css'
 import { Route } from 'react-router-dom'
 
 import NormalList from './components/NormalList'
-import ReactWindowList from './components/ReactWindowList'
-import ReactWindowColumn from './components/react-window-column'
+import ReactWindowList from './components/row/react-window-list'
+import ReactWindowColumn from './components/column/react-window-column'
 import ReactWindowGrid from './components/grid/react-window-grid'
 import Home from './components/Home'
 
