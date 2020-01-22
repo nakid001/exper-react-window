@@ -17,7 +17,7 @@ const App: React.FC = () => {
       <Route path="/react-window" component={ReactWindowList} />
       <Route path="/react-window-column" component={ReactWindowColumn} />
       <Route path="/react-window-grid" component={ReactWindowGrid} />
-</div>
+    </div>
   );
 }
 

@@ -7,7 +7,7 @@ interface LargeDataProps {
   options: string[]
 }
 
-const ReactWindowList: FC<LargeDataProps> = (props: any) => {
+const ReactWindowRow: FC<LargeDataProps> = (props: any) => {
   const { options } = props
   const [rownNumber, setRownumber] = useState(0)
 
@@ -51,4 +51,4 @@ const ReactWindowList: FC<LargeDataProps> = (props: any) => {
   );
 }
 
-export default ReactWindowList
+export default ReactWindowRow
