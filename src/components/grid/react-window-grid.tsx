@@ -7,14 +7,14 @@ const ReactWindowGrid = ((props:any) => {
   }
   function generateOption(): any {
     let options = []
-    for (let i = 0; i < 100000; i++) {
+    for (let i = 0; i < 100002; i++) {
       options.push('Options ' + (i + 1))
     }
     return options
   }
   
   return (
-    <div style={{height:"500px", width:"100%"}}>
+    <div style={{height:"500px", width:"600px"}}>
       <FixedSizeGridComponent options={generateOption()}/>
     </div>
   )

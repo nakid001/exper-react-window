@@ -7,6 +7,8 @@ import NormalList from './components/NormalList'
 import ReactWindowList from './components/row/react-window-list'
 import ReactWindowColumn from './components/column/react-window-column'
 import ReactWindowGrid from './components/grid/react-window-grid'
+import ReactWindowInfinite from './components/row/react-window-infinite-page'
+
 import Home from './components/Home'
 
 const App: React.FC = () => {
@@ -17,6 +19,7 @@ const App: React.FC = () => {
       <Route path="/react-window" component={ReactWindowList} />
       <Route path="/react-window-column" component={ReactWindowColumn} />
       <Route path="/react-window-grid" component={ReactWindowGrid} />
+      <Route path="/react-window-infinite" component={ReactWindowInfinite} />
 </div>
   );
 }

@@ -36,7 +36,7 @@ const FixedSizeGridComponent: React.FC<ReactWindowGridProps> = ((props: any) => 
           columnCount={5}
           columnWidth={100}
           height={height}
-          rowCount={options.length/5}
+          rowCount={Math.ceil(options.length/5)}
           rowHeight={35}
           width={width}
         >
