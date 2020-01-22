@@ -1,19 +1,19 @@
 import React, { FC, useState } from "react";
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import AutoSizer from "react-virtualized-auto-sizer";
-
+import './style.css'
 
 interface LargeDataProps {
   options: string[]
 }
 
-const ReactWindowList: FC<LargeDataProps> = (props: any) => {
+const ReactWindowRow: FC<LargeDataProps> = (props: any) => {
   const { options } = props
   const [rownNumber, setRownumber] = useState(0)
 
   const Row = ({ index, style }: ListChildComponentProps): JSX.Element => {
     return (
-      <div key={index} style={style}>
+      <div key={index} className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
         {options[index]}
       </div>
     );
@@ -28,15 +28,16 @@ const ReactWindowList: FC<LargeDataProps> = (props: any) => {
   function handleOnSelectRowChange(event: any) {
     setRownumber(event.target.value.replace(/[^0-9]/g, ''))
   }
+
   return (
     <div style={{ height: "700px", width: "100%" }}>
       <span>Specific row number: </span>
       <input type="text" onChange={handleOnSelectRowChange} />
-      <button onClick={scrollToSpecific}>Go</button>
+      <button onClick={scrollToSpecific} >Go</button>
       <AutoSizer >
         {({ height, width }) => (
           <FixedSizeList
-            ref={listRef} {...props}
+            ref={listRef}
             className="List"
             itemCount={options.length} // number of item
             itemSize={35} // size between option
@@ -51,4 +52,4 @@ const ReactWindowList: FC<LargeDataProps> = (props: any) => {
   );
 }
 
-export default ReactWindowList
+export default ReactWindowRow

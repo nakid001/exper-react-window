@@ -11,12 +11,11 @@ interface LargeDataProps {
 
 const ReactWindowInfiniteComponent: FC<LargeDataProps> = (props: any) => {
   const { options } = props
-  const [rownNumber, setRownumber] = useState(0)
   const LOADING = 1;
   const LOADED = 2;
-  let itemStatusMap:any = {};
-  const isItemLoaded = ((index:number) => !!itemStatusMap[index]);
-  const loadMoreItems = (startIndex:number, stopIndex:number) => {
+  let itemStatusMap: any = {};
+  const isItemLoaded = ((index: number) => !!itemStatusMap[index]);
+  const loadMoreItems = (startIndex: number, stopIndex: number) => {
     for (let index = startIndex; index <= stopIndex; index++) {
       itemStatusMap[index] = LOADING;
     }
@@ -26,7 +25,7 @@ const ReactWindowInfiniteComponent: FC<LargeDataProps> = (props: any) => {
           itemStatusMap[index] = LOADED;
         }
         resolve();
-      }, 2500)
+      }, 250)
     );
   };
 
@@ -45,26 +44,14 @@ const ReactWindowInfiniteComponent: FC<LargeDataProps> = (props: any) => {
     );
   };
 
-  const listRef: any = React.createRef();
-
-  function scrollToSpecific() {
-    listRef.current.scrollToItem(rownNumber, 'center');
-  };
-
-  function handleOnSelectRowChange(event: any) {
-    setRownumber(event.target.value.replace(/[^0-9]/g, ''))
-  }
   return (
     <div style={{ height: "700px", width: "100%" }}>
-      <span>Specific row number: </span>
-      <input type="text" onChange={handleOnSelectRowChange} />
-      <button onClick={scrollToSpecific}>Go</button>
       <AutoSizer >
         {({ height, width }) => (
 
           <InfiniteLoader
             isItemLoaded={isItemLoaded}
-            itemCount={1000}
+            itemCount={options.length}
             loadMoreItems={loadMoreItems}
           >
             {({ onItemsRendered, ref }) => (
@@ -77,7 +64,7 @@ const ReactWindowInfiniteComponent: FC<LargeDataProps> = (props: any) => {
                 width={width}
                 onItemsRendered={onItemsRendered}
               >
-                {Row}
+                {Row} 
               </FixedSizeList>
             )}
           </InfiniteLoader>
