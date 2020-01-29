@@ -7,7 +7,7 @@ const ReactWindowGrid = ((props:any) => {
   }
   function generateOption(): any {
     let options = []
-    for (let i = 0; i < 100002; i++) {
+    for (let i = 0; i < 1000002; i++) {
       options.push('Options ' + (i + 1))
     }
     return options

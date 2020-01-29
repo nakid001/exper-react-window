@@ -4,7 +4,11 @@ const Home = () => {
   return (
     <div>
       <div>
-        <button> <a href="/normal"> Normal list</a></button>
+        <div style={{color:"red"}}>
+          WARNING This function might break your browser! ->
+          <button> <a href="/normal-broken"> Normal very large list</a></button>
+        </div>
+        <button> <a href="/normal"> Normal large list</a></button>
         <button> <a href="/react-window"> React window list</a></button>
       </div>
       <div id="content">

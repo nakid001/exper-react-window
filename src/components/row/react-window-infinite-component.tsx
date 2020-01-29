@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import AutoSizer from "react-virtualized-auto-sizer";
 import InfiniteLoader from "react-window-infinite-loader";
@@ -45,32 +45,30 @@ const ReactWindowInfiniteComponent: FC<LargeDataProps> = (props: any) => {
   };
 
   return (
-    <div style={{ height: "700px", width: "100%" }}>
-      <AutoSizer >
-        {({ height, width }) => (
+    <AutoSizer >
+      {({ height, width }) => (
 
-          <InfiniteLoader
-            isItemLoaded={isItemLoaded}
-            itemCount={options.length}
-            loadMoreItems={loadMoreItems}
-          >
-            {({ onItemsRendered, ref }) => (
-              <FixedSizeList
-                ref={ref} {...props}
-                className="List"
-                itemCount={options.length} // number of item
-                itemSize={35} // size between option
-                height={height} // height of this list
-                width={width}
-                onItemsRendered={onItemsRendered}
-              >
-                {Row} 
-              </FixedSizeList>
-            )}
-          </InfiniteLoader>
-        )}
-      </AutoSizer>
-    </div>
+        <InfiniteLoader
+          isItemLoaded={isItemLoaded}
+          itemCount={options.length}
+          loadMoreItems={loadMoreItems}
+        >
+          {({ onItemsRendered, ref }) => (
+            <FixedSizeList
+              ref={ref} {...props}
+              className="List"
+              itemCount={options.length} // number of item
+              itemSize={35} // size between option
+              height={height} // height of this list
+              width={width}
+              onItemsRendered={onItemsRendered}
+            >
+              {Row}
+            </FixedSizeList>
+          )}
+        </InfiniteLoader>
+      )}
+    </AutoSizer>
   );
 }
 

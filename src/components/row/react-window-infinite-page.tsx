@@ -5,7 +5,7 @@ interface LargeDataProps {
 }
 function generateOption(): any {
   let options = []
-  for (let i = 0; i < 100000; i++) {
+  for (let i = 0; i < 1000000; i++) {
     options.push('Options ' + (i + 1))
   }
   return options
