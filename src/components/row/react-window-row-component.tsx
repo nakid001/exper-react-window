@@ -20,20 +20,17 @@ const ReactWindowRow: FC<LargeDataProps> = (props: any) => {
   };
 
   return (
-    <AutoSizer >
-      {({ height, width }) => (
         <FixedSizeList
           ref={listRef} // ref for navigate
           className="List"
           itemCount={options.length} // number of item
           itemSize={35} // size between option
-          height={height} // height of this list
-          width={width}
+          height={100} // height of this list
+          width={"100%"}
         >
           {Row}
         </FixedSizeList>
-      )}
-    </AutoSizer>
+
   );
 }
 

@@ -7,20 +7,16 @@ html {
   border: 1px solid #d9dddd;
 }
 
-.ListItemEven,
+/* .ListItemEven,
 .ListItemOdd {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .ListItemEven {
   background-color: #f8f8f0;
 }
 .ListItemEven:hover, .ListItemOdd:hover {
   background-color: #2980B9; 
-}
-
-.ListItemEven:focus, .ListItemOdd:focus {
-  background-color: rgb(238, 51, 26); 
 }

@@ -15,7 +15,7 @@ import Home from './components/Home'
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
       <Route path="/normal" component={NormalList} />
       <Route path="/normal-broken" component={NormalListBroken} />
       <Route path="/react-window" component={ReactWindowRow} />
